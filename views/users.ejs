@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<style>
+	form{
+		margin-top: 150px;		
+	}
+	#message,#uname1{
+		display: none;
+	}
+ 	p.error {
+        color: red;
+        font-style: bold;
+        font-size: 20px;
+	    }
+
+</style>
+<body>
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+		<form action="" method="post">
+			<div class="panel-group">
+				<div class="panel panel-danger">
+					<div class="panel-heading text-center">Login Here</div>
+				</div>
+			</div>
+			<label for="name">Username:</label>
+			<input type="text" name="uname" id="uname" class="form-control" placeholder="Enter Your Email id"><br>
+			<p id="uname1" class="invalid">Emailid is required and proper emailid</p>
+			<label for="pass">Password:</label>
+			<input type="Password" name="pass" id="pass" class="form-control" placeholder="Enter Your Password"><br>
+			<p id="pass1" class="invalid"></p>
+			<input type="submit" class="btn btn-danger" value="Submit">
+			<a href="/register"><input type="button" class="btn btn-success" value="Register"></a>
+			<div>
+				<p class="error"><% if(message){ %> <%=message%> <% } %> </p>
+            </div>
+		</form>
+		</div>
+		<div class="col-sm-4">
+		<div id="message">
+	  	  <h3>Password must contain the following:</h3>
+		  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+		  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+		  <p id="number" class="invalid">A <b>number</b></p>
+		  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+		</div>	
+	</div>
+	</div>
+	
+</body>
+</html>

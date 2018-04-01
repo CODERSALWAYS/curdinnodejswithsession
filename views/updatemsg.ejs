@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Update</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="row-sm-4"></div>
+			<div class="row-sm-4">
+				<table class="table">
+					<th>Update data</th>
+					<tr>
+					<td>
+					<form action="/messageupdatedata" method="post">
+						<input type="text" name="mid" class="form-control hidden" value="<%=data[0].mid%>">
+						<label for="message" >Message :</label>
+						<textarea name="msg" id="msg" cols="30" rows="10" required><%= data[0].message%></textarea><br>
+						<input type="submit" class="btn btn-danger" id="submit" value="Submit updated">
+					</form>
+					</td>
+						</tr>
+				</table>
+			</div>
+			<div class="row-sm-4"></div>
+		</div>
+	</div>	
+	<script src="/js/bootstrap.js"></script>
+	<script src="/js/jquery.js"></script>
+</body>
+</html>
