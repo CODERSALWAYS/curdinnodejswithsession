@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var messagemodel = require('../model/messagemodel');
-/* GET users listing. */
+// /* GET users listing. */
+
 router.get('/dashboard', function(req, res) {
 	messagemodel.showMessage(function(error, result){
 		if (error) {

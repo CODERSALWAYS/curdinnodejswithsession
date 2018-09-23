@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser')
 var messagemodel = require('../model/messagemodel');
 var usermodel = require('../model/usermodel');
 
-
 router.use(cookieParser());
 router.use(session({secret: "Shh, its a secret!", cookie: {maxAge: 360000}}));
 
@@ -24,13 +23,14 @@ router.get('/', function(req, res) {
 router.get('/logout', function(req, res, next){
 	req.session.destroy(function(error){
 		if (error) {
-			res.redirect('logout?error');
+			res.redirect('/logout?error');
 		}
 		else{
 			res.redirect('/');
 		}
 	});
 });
+
 router.get('/register', function(req, res, next){
 	res.render('register');
 });
